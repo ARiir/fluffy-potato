@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Dashboard</title>
+<!-- Include CSS for dashboard styling -->
+<link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+  /* Additional styles for the dashboard */
+  p {
+  background-image: url('background_images.jpg');
+}
+  .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+  }
+
+  .sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: background-color 0.3s;
+  }
+
+  .sidebar a:hover {
+    background-color: #ff9191;
+  }
+
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  
+    .dashboard-image {
+    width: 250%;
+    max-width: 1200px;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 72, 72, 0.1);
+  }
+
+    .slideshow-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .text {
+    color: #ff7676;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 108, 108, 0.5);
+  }
+
+
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <a href="#home" target="_blank">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+  <a href="reservation_form.html" class="reservation-link" target="_blank">Make a reservation</a>
+  <a href="list.html" class="reservation-list">Reservation List</a>
+</div>
+
+<!-- Page content -->
+<div class="content">
+  <h2>Trio Food Carts</h2>
+  <p>Welcome to the Trio Food carts official website.</p>
+  <!--
+  <img src="dashboard_image.jpg" alt="Dashboard Image" class="dashboard-image">
+-->
+
+<div class="slideshow-container">
+    <img src="slide1.jpg" alt="Slide 1">
+    <img src="slide2.jpg" alt="Slide 2">
+    <img src="slide3.jpg" alt="Slide 3">
+    <img src="slide1.jpg" alt="Slide 1">
+    <img src="slide2.jpg" alt="Slide 2">
+    <img src="slide3.jpg" alt="Slide 3">
+    <div class="text">Caption Text</div>
+</div>
+<script src="slideshow.js"></script>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.querySelectorAll(".slideshow-container img");
+  var captions = document.querySelectorAll(".text");
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slideIndex++;
+
+  if (slideIndex > slides.length) {slideIndex = 1;}
+
+  for (i = 0; i < captions.length; i++) {
+    captions[i].style.display = "none";
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+showSlides();
+</script>
+
+</body>
+</html>
